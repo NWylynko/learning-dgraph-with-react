@@ -1,0 +1,30 @@
+type User {
+  userName: String! @id
+  displayName: String
+  avatarImg: String
+  posts: [Post!]
+  comments: [Comment!]
+}
+
+type Post {
+  id: ID!
+  title: String! @search(by: [term])
+  text: String! @search(by: [fulltext])
+  datePublished: DateTime
+  author: User! @hasInverse(field: posts)
+  category: Category! @hasInverse(field: posts)
+  comments: [Comment!]
+}
+
+type Comment {
+  id: ID!
+  text: String!
+  commentsOn: Post! @hasInverse(field: comments)
+  author: User! @hasInverse(field: comments)
+}
+
+type Category {
+  id: ID!
+  name: String! @search(by: [term])
+  posts: [Post!]
+}

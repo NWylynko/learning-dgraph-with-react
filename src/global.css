@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  font-family: "Shippori Antique";
+
+  --color-one: #FFC09F;
+  --color-two: #FFEE93;
+  --color-three: #fffdf0;
+  --color-four: #A0CED9;
+  --color-five: #ADF7B6;
+
+  background-color: var(--color-three);
+  color: var(--color-four);
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}

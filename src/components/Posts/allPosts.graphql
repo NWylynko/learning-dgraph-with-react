@@ -1,0 +1,19 @@
+query allPosts {
+  queryPost(order: { desc: datePublished }) {
+    id
+    title
+    datePublished
+    category {
+      id
+      name
+    }
+    author {
+      userName
+      displayName
+      avatarImg
+    }
+    commentsAggregate {
+      count
+    }
+  }
+}
