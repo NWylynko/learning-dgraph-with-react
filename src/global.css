@@ -2,14 +2,17 @@ body {
   margin: 0;
   font-family: "Shippori Antique";
 
-  --color-one: #FFC09F;
-  --color-two: #FFEE93;
+  --color-one: #ffc09f;
+  --color-two: #f1c1ef;
   --color-three: #fffdf0;
-  --color-four: #A0CED9;
-  --color-five: #ADF7B6;
+  --color-four: #a0ced9;
+  --color-five: #90f09b;
 
   background-color: var(--color-three);
   color: var(--color-four);
+
+  height: 100vh;
+  width: 100vw;
 }
 
 #root {
@@ -18,4 +21,16 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-five);
+  border: 2px solid transparent;
+  margin: 4px;
+  padding: 4px;
+}
+
+a:hover {
+  border-bottom: 2px solid var(--color-five);
 }

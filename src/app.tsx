@@ -3,7 +3,7 @@ import { Layout } from "./components/Layout";
 import { LoadingSuspense } from "./components/Loading";
 import { Routes, Route } from "react-router-dom";
 
-const Home = React.lazy(() => import("./pages/Home"));
+const Home = React.lazy(() => import("./pages/Posts"));
 const Post = React.lazy(() => import("./pages/Post"));
 
 export const App = () => {

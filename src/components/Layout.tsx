@@ -16,4 +16,7 @@ export const Layout = ({ children }: LayoutProps) => {
   );
 };
 
-const Main = styled.main``;
+const Main = styled.main`
+  height: 100vh;
+  width: 100vw;
+`;

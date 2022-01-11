@@ -1,4 +1,4 @@
-import * as Types from '../../../types/graphql';
+import * as Types from '../../types/graphql';
 
 import { gql } from '@apollo/client';
 import * as Apollo from '@apollo/client';
@@ -6,7 +6,7 @@ const defaultOptions =  {}
 export type AllPostsQueryVariables = Types.Exact<{ [key: string]: never; }>;
 
 
-export type AllPostsQuery = { __typename?: 'Query', queryPost?: Array<{ __typename?: 'Post', id: string, title: string, datePublished?: any | null | undefined, category: { __typename?: 'Category', id: string, name: string }, author: { __typename?: 'User', userName: string, displayName?: string | null | undefined, avatarImg?: string | null | undefined }, commentsAggregate?: { __typename?: 'CommentAggregateResult', count?: number | null | undefined } | null | undefined } | null | undefined> | null | undefined };
+export type AllPostsQuery = { __typename?: 'Query', queryPost?: Array<{ __typename?: 'Post', id: string, title: string, datePublished?: any | null | undefined, category: { __typename?: 'Category', id: string, name: string }, author: { __typename?: 'User', username: string, displayName?: string | null | undefined, avatarImg?: string | null | undefined }, commentsAggregate?: { __typename?: 'CommentAggregateResult', count?: number | null | undefined } | null | undefined } | null | undefined> | null | undefined };
 
 
 export const AllPostsDocument = gql`
@@ -20,7 +20,7 @@ export const AllPostsDocument = gql`
       name
     }
     author {
-      userName
+      username
       displayName
       avatarImg
     }

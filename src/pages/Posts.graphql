@@ -8,7 +8,7 @@ query allPosts {
       name
     }
     author {
-      userName
+      username
       displayName
       avatarImg
     }

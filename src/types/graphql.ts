@@ -89,7 +89,7 @@ export type AddUserInput = {
   comments?: InputMaybe<Array<CommentRef>>;
   displayName?: InputMaybe<Scalars['String']>;
   posts?: InputMaybe<Array<PostRef>>;
-  userName: Scalars['String'];
+  username: Scalars['String'];
 };
 
 export type AddUserPayload = {
@@ -709,7 +709,7 @@ export type QueryGetPostArgs = {
 
 
 export type QueryGetUserArgs = {
-  userName: Scalars['String'];
+  username: Scalars['String'];
 };
 
 
@@ -866,7 +866,7 @@ export type User = {
   displayName?: Maybe<Scalars['String']>;
   posts?: Maybe<Array<Post>>;
   postsAggregate?: Maybe<PostAggregateResult>;
-  userName: Scalars['String'];
+  username: Scalars['String'];
 };
 
 
@@ -902,8 +902,8 @@ export type UserAggregateResult = {
   count?: Maybe<Scalars['Int']>;
   displayNameMax?: Maybe<Scalars['String']>;
   displayNameMin?: Maybe<Scalars['String']>;
-  userNameMax?: Maybe<Scalars['String']>;
-  userNameMin?: Maybe<Scalars['String']>;
+  usernameMax?: Maybe<Scalars['String']>;
+  usernameMin?: Maybe<Scalars['String']>;
 };
 
 export type UserFilter = {
@@ -911,7 +911,7 @@ export type UserFilter = {
   has?: InputMaybe<Array<InputMaybe<UserHasFilter>>>;
   not?: InputMaybe<UserFilter>;
   or?: InputMaybe<Array<InputMaybe<UserFilter>>>;
-  userName?: InputMaybe<StringHashFilter>;
+  username?: InputMaybe<StringHashFilter>;
 };
 
 export enum UserHasFilter {
@@ -919,7 +919,7 @@ export enum UserHasFilter {
   Comments = 'comments',
   DisplayName = 'displayName',
   Posts = 'posts',
-  UserName = 'userName'
+  Username = 'username'
 }
 
 export type UserOrder = {
@@ -931,7 +931,7 @@ export type UserOrder = {
 export enum UserOrderable {
   AvatarImg = 'avatarImg',
   DisplayName = 'displayName',
-  UserName = 'userName'
+  Username = 'username'
 }
 
 export type UserPatch = {
@@ -939,7 +939,7 @@ export type UserPatch = {
   comments?: InputMaybe<Array<CommentRef>>;
   displayName?: InputMaybe<Scalars['String']>;
   posts?: InputMaybe<Array<PostRef>>;
-  userName?: InputMaybe<Scalars['String']>;
+  username?: InputMaybe<Scalars['String']>;
 };
 
 export type UserRef = {
@@ -947,7 +947,7 @@ export type UserRef = {
   comments?: InputMaybe<Array<CommentRef>>;
   displayName?: InputMaybe<Scalars['String']>;
   posts?: InputMaybe<Array<PostRef>>;
-  userName?: InputMaybe<Scalars['String']>;
+  username?: InputMaybe<Scalars['String']>;
 };
 
 export type WithinFilter = {

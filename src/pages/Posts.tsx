@@ -1,10 +1,12 @@
 import styled from "styled-components";
-import { LoadingContainer } from "../Loading";
-import { useAllPostsQuery } from "./types/allPosts";
+import { useAllPostsQuery } from "./types/Posts";
+import { LoadingContainer } from "../components/Loading";
 
 import { FaRegComment } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
-export const Posts = () => {
+const Posts = () => {
+  const navigate = useNavigate();
   const { data, loading, error } = useAllPostsQuery();
 
   if (loading) {
@@ -14,7 +16,6 @@ export const Posts = () => {
   if (error) {
     return <span>Error: {error.message}</span>;
   }
-
   return (
     <Table>
       <thead>
@@ -26,12 +27,12 @@ export const Posts = () => {
       </thead>
       <tbody>
         {data?.queryPost?.map((post) => (
-          <tr key={post?.id}>
+          <Row key={post?.id} onClick={() => navigate(`/post/${post?.id}`)}>
             <TitleSection>
               <UserImage src={post?.author.avatarImg || ""} />
               <Title>{post?.title}</Title>
               <Author>
-                {post?.author.displayName || post?.author.userName}
+                {post?.author.displayName || post?.author.username}
               </Author>
             </TitleSection>
             <td>
@@ -41,12 +42,14 @@ export const Posts = () => {
               <HeartIcon />
               <span>{post?.commentsAggregate?.count} Replies</span>
             </ResponseSection>
-          </tr>
+          </Row>
         ))}
       </tbody>
     </Table>
   );
 };
+
+export default Posts;
 
 const Table = styled.table`
   width: calc(100vw - 64px);
@@ -54,6 +57,11 @@ const Table = styled.table`
 `;
 const HeaderItem = styled.th`
   text-align: left;
+`;
+const Row = styled.tr`
+  &:hover {
+    cursor: pointer;
+  }
 `;
 const TitleSection = styled.td`
   display: grid;
@@ -68,6 +76,7 @@ const UserImage = styled.img`
   height: 50px;
   border-radius: 6px;
   margin: 6px;
+  background-color: var(--color-one);
 `;
 const Title = styled.h2`
   grid-area: title;
