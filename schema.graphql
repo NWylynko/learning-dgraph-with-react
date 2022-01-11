@@ -1,5 +1,5 @@
 type User {
-  userName: String! @id
+  username: String! @id
   displayName: String
   avatarImg: String
   posts: [Post!]
@@ -28,3 +28,5 @@ type Category {
   name: String! @search(by: [term])
   posts: [Post!]
 }
+
+# Dgraph.Authorization {"JWKUrl":"https://www.googleapis.com/service_accounts/v1/jwk/securetoken@system.gserviceaccount.com", "Namespace": "https://xyz.io/jwt/claims", "Audience": ["learning-dgraph-with-react"], "Header": "authorization"}

@@ -2,15 +2,14 @@ import React from "react";
 import { LoadingPage, LoadingSuspense } from "./components/Loading";
 import { Routes, Route } from "react-router-dom";
 
-import { auth } from "./firebase";
-import { useAuthState } from "react-firebase-hooks/auth";
+import { useFirebase } from "./firebase/provider";
 
 const Home = React.lazy(() => import("./pages/Posts"));
 const Post = React.lazy(() => import("./pages/Post"));
 const Login = React.lazy(() => import("./pages/Login"));
 
 export const App = () => {
-  const [user, loading, error] = useAuthState(auth);
+  const { loading, error, user } = useFirebase();
 
   if (loading) {
     return <LoadingPage text="Auth" />;
@@ -32,7 +31,7 @@ export const App = () => {
     );
   }
 
-  console.log(user);
+  console.log("App", user);
 
   return (
     <Routes>

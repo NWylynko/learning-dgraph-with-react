@@ -8,14 +8,17 @@ import { Layout } from "./components/Layout";
 
 import "@fontsource/shippori-antique";
 import "./global.css";
+import { FirebaseProvider } from "./firebase/provider";
 
 render(
-  <DataProvider>
-    <BrowserRouter>
-      <Layout>
-        <App />
-      </Layout>
-    </BrowserRouter>
-  </DataProvider>,
+  <FirebaseProvider>
+    <DataProvider>
+      <BrowserRouter>
+        <Layout>
+          <App />
+        </Layout>
+      </BrowserRouter>
+    </DataProvider>
+  </FirebaseProvider>,
   document.getElementById("root")
 );
