@@ -4,6 +4,7 @@ import { render } from "react-dom";
 import { App } from "./app";
 import { DataProvider } from "./data/client";
 import { BrowserRouter } from "react-router-dom";
+import { Layout } from "./components/Layout";
 
 import "@fontsource/shippori-antique";
 import "./global.css";
@@ -11,7 +12,9 @@ import "./global.css";
 render(
   <DataProvider>
     <BrowserRouter>
-      <App />
+      <Layout>
+        <App />
+      </Layout>
     </BrowserRouter>
   </DataProvider>,
   document.getElementById("root")

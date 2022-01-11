@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Footer } from "./Footer";
 import { Header } from "./Header";
 
 interface LayoutProps {
@@ -11,12 +10,14 @@ export const Layout = ({ children }: LayoutProps) => {
     <>
       <Header />
       <Main>{children}</Main>
-      <Footer />
     </>
   );
 };
 
 const Main = styled.main`
-  height: 100vh;
-  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100% - 100px);
 `;

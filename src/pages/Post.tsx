@@ -42,7 +42,9 @@ export default Post;
 
 const Container = styled.div`
   padding: 8px;
-  max-width: 60ch;
+  min-width: 300px;
+  width: 60ch;
+  max-width: 95vw;
   margin: auto;
 `;
 const Title = styled.h2`

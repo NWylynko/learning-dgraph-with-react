@@ -2,14 +2,19 @@ import styled from "styled-components";
 import { Navigation } from "./Navigation";
 
 export const Header = () => {
-  return <Container><Title>Dgraph & React Discussion Board</Title><Navigation /></Container>;
+  return (
+    <Container>
+      <Title>Dgraph & React Discussion Board</Title>
+      <Navigation />
+    </Container>
+  );
 };
 
 const Container = styled.header`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  height: 128px;
+  height: 100px;
   background-color: var(--color-one);
   color: var(--color-two);
   width: 100%;
