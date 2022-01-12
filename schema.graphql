@@ -29,4 +29,4 @@ type Category {
   posts: [Post!]
 }
 
-# Dgraph.Authorization {"JWKUrl":"https://www.googleapis.com/service_accounts/v1/jwk/securetoken@system.gserviceaccount.com", "Namespace": "https://xyz.io/jwt/claims", "Audience": ["learning-dgraph-with-react"], "Header": "authorization"}
+# Dgraph.Authorization {"JWKUrl":"https://www.googleapis.com/service_accounts/v1/jwk/securetoken@system.gserviceaccount.com", "Namespace": "https://learning-dgraph-with-react.web.app/", "Audience": ["learning-dgraph-with-react"], "Header": "authorization"}
