@@ -8,6 +8,7 @@ type User {
 }
 
 type Post
+  @withSubscription
   @auth(
     add: {
       rule: """

@@ -1,4 +1,4 @@
-query allPosts {
+subscription allPosts {
   queryPost(order: { desc: datePublished }) {
     id
     title

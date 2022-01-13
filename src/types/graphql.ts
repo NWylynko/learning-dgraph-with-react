@@ -779,6 +779,31 @@ export type StringTermFilter = {
   anyofterms?: InputMaybe<Scalars['String']>;
 };
 
+export type Subscription = {
+  __typename?: 'Subscription';
+  aggregatePost?: Maybe<PostAggregateResult>;
+  getPost?: Maybe<Post>;
+  queryPost?: Maybe<Array<Maybe<Post>>>;
+};
+
+
+export type SubscriptionAggregatePostArgs = {
+  filter?: InputMaybe<PostFilter>;
+};
+
+
+export type SubscriptionGetPostArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type SubscriptionQueryPostArgs = {
+  filter?: InputMaybe<PostFilter>;
+  first?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order?: InputMaybe<PostOrder>;
+};
+
 export type UpdateCategoryInput = {
   filter: CategoryFilter;
   remove?: InputMaybe<CategoryPatch>;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useAllPostsQuery } from "./types/Posts";
+import { useAllPostsSubscription } from "./types/Posts";
 import { LoadingContainer } from "../components/Loading";
 
 import { FaRegComment } from "react-icons/fa";
@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 const PostsPage = () => {
   const navigate = useNavigate();
-  const { data, loading, error } = useAllPostsQuery();
+  const { data, loading, error } = useAllPostsSubscription();
 
   if (loading) {
     return <LoadingContainer text="Loading Posts" />;
@@ -16,6 +16,7 @@ const PostsPage = () => {
   if (error) {
     return <span>Error: {error.message}</span>;
   }
+
   return (
     <Table>
       <thead>

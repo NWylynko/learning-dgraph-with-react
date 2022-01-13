@@ -18,9 +18,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@apollo/client@npm:^3.5.6":
-  version: 3.5.6
-  resolution: "@apollo/client@npm:3.5.6"
+"@apollo/client@npm:^3.0.0-beta.23, @apollo/client@npm:^3.5.7":
+  version: 3.5.7
+  resolution: "@apollo/client@npm:3.5.7"
   dependencies:
     "@graphql-typed-document-node/core": ^3.0.0
     "@wry/context": ^0.6.0
@@ -43,7 +43,19 @@ __metadata:
       optional: true
     subscriptions-transport-ws:
       optional: true
-  checksum: 503cc1f34114be1c0fe411744881078f781c6d33b431199dce3813e7cbf85f4cf2f06fd283b08c00f92c0ccea83ef531aa3c5d2215ba2937fb1cc208fbe83300
+  checksum: ddecf62b4bf402948892bf993d58933432fc743b6859ef557fcd137e9b9398c081279dce75e037396f9b22fd54bf578cb88819b4b55bd5e2c30428f100c519b6
+  languageName: node
+  linkType: hard
+
+"@apollo/link-ws@npm:^2.0.0-beta.3":
+  version: 2.0.0-beta.3
+  resolution: "@apollo/link-ws@npm:2.0.0-beta.3"
+  dependencies:
+    "@apollo/client": ^3.0.0-beta.23
+    tslib: ^1.9.3
+  peerDependencies:
+    subscriptions-transport-ws: ^0.9.0
+  checksum: 0ba0b97ec13ea4247dd4e98dc799fd66fa8c805149fc176f2d5b300434bb336d19e3e6415ef7865c05a30f0c183ca7d800736a051b5048298980957d1e4a0555
   languageName: node
   linkType: hard
 
@@ -3615,7 +3627,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:>=12.12.47, @types/node@npm:>=13.7.0":
+"@types/node@npm:*, @types/node@npm:>=12.12.47, @types/node@npm:>=13.7.0, @types/node@npm:^17.0.8":
   version: 17.0.8
   resolution: "@types/node@npm:17.0.8"
   checksum: f4cadeb9e602027520abc88c77142697e33cf6ac98bb02f8b595a398603cbd33df1f94d01c055c9f13cde0c8eaafc5e396ca72645458d42b4318b845bc7f1d0f
@@ -9963,7 +9975,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "learning-dgraph-with-react@workspace:."
   dependencies:
-    "@apollo/client": ^3.5.6
+    "@apollo/client": ^3.5.7
+    "@apollo/link-ws": ^2.0.0-beta.3
     "@fontsource/shippori-antique": ^4.5.1
     "@graphql-codegen/add": ^3.1.1
     "@graphql-codegen/cli": ^2.3.1
@@ -9972,6 +9985,7 @@ __metadata:
     "@graphql-codegen/typescript": ^2.4.2
     "@graphql-codegen/typescript-operations": ^2.2.2
     "@graphql-codegen/typescript-react-apollo": ^3.2.3
+    "@types/node": ^17.0.8
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     "@types/styled-components": ^5.1.19
@@ -9988,6 +10002,7 @@ __metadata:
     react-router-dom: ^6.2.1
     react-scripts: ^5.0.0
     styled-components: ^5.3.3
+    subscriptions-transport-ws: ^0.11.0
     typescript: ^4.5.4
   languageName: unknown
   linkType: soft
@@ -14607,7 +14622,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:^1.8.1, tslib@npm:^1.9.0":
+"tslib@npm:^1.8.1, tslib@npm:^1.9.0, tslib@npm:^1.9.3":
   version: 1.14.1
   resolution: "tslib@npm:1.14.1"
   checksum: dbe628ef87f66691d5d2959b3e41b9ca0045c3ee3c7c7b906cc1e328b39f199bb1ad9e671c39025bd56122ac57dfbf7385a94843b1cc07c60a4db74795829acd

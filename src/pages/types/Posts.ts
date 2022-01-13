@@ -3,14 +3,14 @@ import * as Types from '../../types/graphql';
 import { gql } from '@apollo/client';
 import * as Apollo from '@apollo/client';
 const defaultOptions =  {}
-export type AllPostsQueryVariables = Types.Exact<{ [key: string]: never; }>;
+export type AllPostsSubscriptionVariables = Types.Exact<{ [key: string]: never; }>;
 
 
-export type AllPostsQuery = { __typename?: 'Query', queryPost?: Array<{ __typename?: 'Post', id: string, title: string, datePublished?: any | null | undefined, category: { __typename?: 'Category', id: string, name: string }, author: { __typename?: 'User', username: string, displayName?: string | null | undefined, avatarImg?: string | null | undefined }, commentsAggregate?: { __typename?: 'CommentAggregateResult', count?: number | null | undefined } | null | undefined } | null | undefined> | null | undefined };
+export type AllPostsSubscription = { __typename?: 'Subscription', queryPost?: Array<{ __typename?: 'Post', id: string, title: string, datePublished?: any | null | undefined, category: { __typename?: 'Category', id: string, name: string }, author: { __typename?: 'User', username: string, displayName?: string | null | undefined, avatarImg?: string | null | undefined }, commentsAggregate?: { __typename?: 'CommentAggregateResult', count?: number | null | undefined } | null | undefined } | null | undefined> | null | undefined };
 
 
 export const AllPostsDocument = gql`
-    query allPosts {
+    subscription allPosts {
   queryPost(order: {desc: datePublished}) {
     id
     title
@@ -32,33 +32,28 @@ export const AllPostsDocument = gql`
     `;
 
 /**
- * __useAllPostsQuery__
+ * __useAllPostsSubscription__
  *
- * To run a query within a React component, call `useAllPostsQuery` and pass it any options that fit your needs.
- * When your component renders, `useAllPostsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * To run a query within a React component, call `useAllPostsSubscription` and pass it any options that fit your needs.
+ * When your component renders, `useAllPostsSubscription` returns an object from Apollo Client that contains loading, error, and data properties
  * you can use to render your UI.
  *
- * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ * @param baseOptions options that will be passed into the subscription, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
  *
  * @example
- * const { data, loading, error } = useAllPostsQuery({
+ * const { data, loading, error } = useAllPostsSubscription({
  *   variables: {
  *   },
  * });
  */
-export function useAllPostsQuery(baseOptions?: Apollo.QueryHookOptions<AllPostsQuery, AllPostsQueryVariables>) {
+export function useAllPostsSubscription(baseOptions?: Apollo.SubscriptionHookOptions<AllPostsSubscription, AllPostsSubscriptionVariables>) {
         const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<AllPostsQuery, AllPostsQueryVariables>(AllPostsDocument, options);
+        return Apollo.useSubscription<AllPostsSubscription, AllPostsSubscriptionVariables>(AllPostsDocument, options);
       }
-export function useAllPostsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<AllPostsQuery, AllPostsQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<AllPostsQuery, AllPostsQueryVariables>(AllPostsDocument, options);
-        }
-export type AllPostsQueryHookResult = ReturnType<typeof useAllPostsQuery>;
-export type AllPostsLazyQueryHookResult = ReturnType<typeof useAllPostsLazyQuery>;
-export type AllPostsQueryResult = Apollo.QueryResult<AllPostsQuery, AllPostsQueryVariables>;
+export type AllPostsSubscriptionHookResult = ReturnType<typeof useAllPostsSubscription>;
+export type AllPostsSubscriptionResult = Apollo.SubscriptionResult<AllPostsSubscription>;
 export const namedOperations = {
-  Query: {
+  Subscription: {
     allPosts: 'allPosts'
   }
 }

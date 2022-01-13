@@ -3,7 +3,10 @@ import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
+  split,
 } from "@apollo/client";
+import { getMainDefinition } from "@apollo/client/utilities";
+import { WebSocketLink } from "@apollo/link-ws";
 import { useEffect, useState } from "react";
 import { useFirebase } from "../firebase/provider";
 
@@ -15,8 +18,27 @@ const createApolloClient = (jwt: string | undefined) => {
     },
   });
 
+  const wsLink = new WebSocketLink({
+    uri: `ws://192.168.0.222:8080/graphql`,
+    options: {
+      reconnect: true,
+    },
+  });
+
+  const splitLink = split(
+    ({ query }) => {
+      const definition = getMainDefinition(query);
+      return (
+        definition.kind === "OperationDefinition" &&
+        definition.operation === "subscription"
+      );
+    },
+    wsLink,
+    httpLink
+  );
+
   return new ApolloClient({
-    link: httpLink,
+    link: splitLink,
     cache: new InMemoryCache(),
   });
 };
