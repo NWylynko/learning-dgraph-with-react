@@ -4,9 +4,11 @@ import { Routes, Route } from "react-router-dom";
 
 import { useFirebase } from "./firebase/provider";
 
-const Home = React.lazy(() => import("./pages/Posts"));
+const Posts = React.lazy(() => import("./pages/Posts"));
 const Post = React.lazy(() => import("./pages/Post"));
+const NewPost = React.lazy(() => import("./pages/NewPost"));
 const Login = React.lazy(() => import("./pages/Login"));
+const User = React.lazy(() => import("./pages/User"));
 
 export const App = () => {
   const { loading, error, user } = useFirebase();
@@ -36,6 +38,14 @@ export const App = () => {
   return (
     <Routes>
       <Route
+        path="/post/new"
+        element={
+          <LoadingSuspense text="New Post">
+            <NewPost />
+          </LoadingSuspense>
+        }
+      />
+      <Route
         path="/post/:id"
         element={
           <LoadingSuspense text="Post">
@@ -44,10 +54,18 @@ export const App = () => {
         }
       />
       <Route
+        path="/user/:id"
+        element={
+          <LoadingSuspense text="Post">
+            <User />
+          </LoadingSuspense>
+        }
+      />
+      <Route
         path="/"
         element={
           <LoadingSuspense text="Home">
-            <Home />
+            <Posts />
           </LoadingSuspense>
         }
       />

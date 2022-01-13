@@ -1,0 +1,14 @@
+mutation createPost($post: AddPostInput!) {
+  addPost(input: [$post]) {
+    post {
+      id
+    }
+  }
+}
+
+query getAllCategories {
+  queryCategory {
+    id
+    name
+  }
+}

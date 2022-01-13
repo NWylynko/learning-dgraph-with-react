@@ -5,7 +5,7 @@ import { auth } from "../firebase";
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { Loading, LoadingContainer } from "../components/Loading";
 
-const Login = () => {
+const LoginPage = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -35,7 +35,7 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginPage;
 
 const Title = styled.h1``;
 

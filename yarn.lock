@@ -9982,6 +9982,7 @@ __metadata:
     react: ^17.0.2
     react-dom: ^17.0.2
     react-firebase-hooks: ^4.0.1
+    react-hook-form: ^7.23.0
     react-icons: ^4.3.1
     react-is: ^17.0.2
     react-router-dom: ^6.2.1
@@ -12627,6 +12628,15 @@ __metadata:
     firebase: ">= 9.0.0"
     react: ">= 16.8.0"
   checksum: 50349d525bb469813434ad204039cad95821f83018ca5fd524d975a962893d8c9146d539d5f23b4a5c31261184657866462d1aa068f4b4edd2d5b6fda9c680b1
+  languageName: node
+  linkType: hard
+
+"react-hook-form@npm:^7.23.0":
+  version: 7.23.0
+  resolution: "react-hook-form@npm:7.23.0"
+  peerDependencies:
+    react: ^16.8.0 || ^17
+  checksum: 8b63d89f2ab147799ce40f98951c0db57c42f831bce38d9927f5358f57615f4102d02b678fd38d0dd93bac00d2e5277e1ea3df17562aa853d80becfa15583222
   languageName: node
   linkType: hard
 

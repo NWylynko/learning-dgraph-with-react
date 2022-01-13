@@ -15,10 +15,15 @@ body {
   width: 100vw;
 }
 
+::placeholder {
+  color: var(--color-four);
+  opacity: 0.75;
+}
+
 a {
   text-decoration: none;
   color: var(--color-five);
-  border: 2px solid transparent;
+  border-bottom: 2px solid transparent;
   margin: 4px;
   padding: 4px;
 }

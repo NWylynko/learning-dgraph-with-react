@@ -9,7 +9,7 @@ import { useFirebase } from "../firebase/provider";
 
 const createApolloClient = (jwt: string | undefined) => {
   const httpLink = createHttpLink({
-    uri: "http://localhost:8080/graphql",
+    uri: "http://192.168.0.222:8080/graphql",
     headers: {
       authorization: jwt ? `Bearer ${jwt}` : "",
     },

@@ -5,7 +5,7 @@ import { LoadingContainer } from "../components/Loading";
 import { FaRegComment } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
-const Posts = () => {
+const PostsPage = () => {
   const navigate = useNavigate();
   const { data, loading, error } = useAllPostsQuery();
 
@@ -49,7 +49,7 @@ const Posts = () => {
   );
 };
 
-export default Posts;
+export default PostsPage;
 
 const Table = styled.table`
   width: calc(100vw - 64px);

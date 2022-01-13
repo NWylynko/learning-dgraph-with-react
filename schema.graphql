@@ -1,12 +1,26 @@
 type User {
-  username: String! @id
+  id: String! @id
+  username: String!
   displayName: String
   avatarImg: String
   posts: [Post!]
   comments: [Comment!]
 }
 
-type Post {
+type Post
+  @auth(
+    add: {
+      rule: """
+      query ($ID: String!) {
+        queryPost {
+          author(filter: { id: { eq: $ID } }) {
+            id
+          }
+        }
+      }
+      """
+    }
+  ) {
   id: ID!
   title: String! @search(by: [term])
   text: String! @search(by: [fulltext])

@@ -19,5 +19,9 @@ const Main = styled.main`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: calc(100% - 100px);
+  height: calc(100vh - 100px);
+
+  @media (max-width: 600px) {
+    height: calc(100vh - 140px);
+  }
 `;

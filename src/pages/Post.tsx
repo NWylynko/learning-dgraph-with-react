@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { LoadingContainer } from "../components/Loading";
 import { useGetPostQuery } from "./types/Post";
 
-const Post = () => {
+const PostPage = () => {
   const { id } = useParams();
 
   if (!id) {
@@ -38,7 +38,7 @@ const Post = () => {
   );
 };
 
-export default Post;
+export default PostPage;
 
 const Container = styled.div`
   padding: 8px;

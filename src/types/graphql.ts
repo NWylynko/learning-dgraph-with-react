@@ -88,6 +88,7 @@ export type AddUserInput = {
   avatarImg?: InputMaybe<Scalars['String']>;
   comments?: InputMaybe<Array<CommentRef>>;
   displayName?: InputMaybe<Scalars['String']>;
+  id: Scalars['String'];
   posts?: InputMaybe<Array<PostRef>>;
   username: Scalars['String'];
 };
@@ -709,7 +710,7 @@ export type QueryGetPostArgs = {
 
 
 export type QueryGetUserArgs = {
-  username: Scalars['String'];
+  id: Scalars['String'];
 };
 
 
@@ -864,6 +865,7 @@ export type User = {
   comments?: Maybe<Array<Comment>>;
   commentsAggregate?: Maybe<CommentAggregateResult>;
   displayName?: Maybe<Scalars['String']>;
+  id: Scalars['String'];
   posts?: Maybe<Array<Post>>;
   postsAggregate?: Maybe<PostAggregateResult>;
   username: Scalars['String'];
@@ -902,6 +904,8 @@ export type UserAggregateResult = {
   count?: Maybe<Scalars['Int']>;
   displayNameMax?: Maybe<Scalars['String']>;
   displayNameMin?: Maybe<Scalars['String']>;
+  idMax?: Maybe<Scalars['String']>;
+  idMin?: Maybe<Scalars['String']>;
   usernameMax?: Maybe<Scalars['String']>;
   usernameMin?: Maybe<Scalars['String']>;
 };
@@ -909,15 +913,16 @@ export type UserAggregateResult = {
 export type UserFilter = {
   and?: InputMaybe<Array<InputMaybe<UserFilter>>>;
   has?: InputMaybe<Array<InputMaybe<UserHasFilter>>>;
+  id?: InputMaybe<StringHashFilter>;
   not?: InputMaybe<UserFilter>;
   or?: InputMaybe<Array<InputMaybe<UserFilter>>>;
-  username?: InputMaybe<StringHashFilter>;
 };
 
 export enum UserHasFilter {
   AvatarImg = 'avatarImg',
   Comments = 'comments',
   DisplayName = 'displayName',
+  Id = 'id',
   Posts = 'posts',
   Username = 'username'
 }
@@ -931,6 +936,7 @@ export type UserOrder = {
 export enum UserOrderable {
   AvatarImg = 'avatarImg',
   DisplayName = 'displayName',
+  Id = 'id',
   Username = 'username'
 }
 
@@ -938,6 +944,7 @@ export type UserPatch = {
   avatarImg?: InputMaybe<Scalars['String']>;
   comments?: InputMaybe<Array<CommentRef>>;
   displayName?: InputMaybe<Scalars['String']>;
+  id?: InputMaybe<Scalars['String']>;
   posts?: InputMaybe<Array<PostRef>>;
   username?: InputMaybe<Scalars['String']>;
 };
@@ -946,6 +953,7 @@ export type UserRef = {
   avatarImg?: InputMaybe<Scalars['String']>;
   comments?: InputMaybe<Array<CommentRef>>;
   displayName?: InputMaybe<Scalars['String']>;
+  id?: InputMaybe<Scalars['String']>;
   posts?: InputMaybe<Array<PostRef>>;
   username?: InputMaybe<Scalars['String']>;
 };
