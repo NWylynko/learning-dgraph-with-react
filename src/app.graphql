@@ -1,0 +1,8 @@
+query getUser($ID: String!) {
+  getUser(id: $ID) {
+    id
+    username
+    displayName
+    avatarImg
+  }
+}

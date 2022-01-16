@@ -1,0 +1,19 @@
+mutation createUser($user: AddUserInput!) {
+  addUser(input: [$user]) {
+    user {
+      id
+      username
+      displayName
+      avatarImg
+    }
+  }
+}
+
+query getUser($ID: String!) {
+  getUser(id: $ID) {
+    id
+    username
+    displayName
+    avatarImg
+  }
+}

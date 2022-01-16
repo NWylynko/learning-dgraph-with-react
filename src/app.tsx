@@ -3,6 +3,7 @@ import { LoadingPage, LoadingSuspense } from "./components/Loading";
 import { Routes, Route } from "react-router-dom";
 
 import { useFirebase } from "./firebase/provider";
+import { useGetUserQuery } from "./types/app";
 
 const Posts = React.lazy(() => import("./pages/Posts"));
 const Post = React.lazy(() => import("./pages/Post"));
@@ -11,29 +12,28 @@ const Login = React.lazy(() => import("./pages/Login"));
 const User = React.lazy(() => import("./pages/User"));
 
 export const App = () => {
-  const { loading, error, user } = useFirebase();
+  const firebase = useFirebase();
+  // const user = useGetUserQuery({ ID: firebase.user?.uid });
 
-  if (loading) {
+  if (firebase.loading) {
     return <LoadingPage text="Auth" />;
   }
 
-  if (error) {
+  if (firebase.error) {
     return (
       <div>
-        <p>Error: {error}</p>
+        <p>Error: {firebase.error}</p>
       </div>
     );
   }
 
-  if (user === null) {
+  if (firebase.user === null) {
     return (
       <LoadingSuspense text="Login">
         <Login />
       </LoadingSuspense>
     );
   }
-
-  console.log("App", user);
 
   return (
     <Routes>
